@@ -1,0 +1,121 @@
+.container {
+  border: 1px solid #191970;
+  width: 108%;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+
+.row {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Custom CSS for the dropdown container */
+.custom-dropdown {
+  margin-left: 10px; /* Adjust margin between dropdowns */
+}
+
+/* Hide the default select arrow */
+.custom-select {
+  padding: 6px 10px; /* Adjust padding for a smaller dropdown */
+  width: 120px; /* Adjust width to your desired size */
+  font-size: 14px; /* Adjust font size */
+  cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+  border-color: #191970; /* Add a 10px border radius */
+}
+
+/* Style the label */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Style the dropdown options */
+.custom-select option {
+  background-color: #fff;
+  color: #333;
+  font-size: 17px;
+}
+
+/* Style the custom dropdown arrow */
+.custom-select::after {
+  content: "\25BC"; /* Unicode character for a down arrow */
+  position: absolute;
+  top: 50%;
+  right: 5px; /* Adjust the right position */
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Style the custom dropdown on hover */
+.custom-select:hover {
+  border-color: #191970;
+}
+
+/* Custom CSS for the vertical line */
+.vertical-line {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 27%; /* Position the line at the center of the page horizontally */
+  transform: translateX(-50%); /* Center the line */
+  width: 0.1px; /* Adjust the line thickness as needed */
+  background-color: #191970; /* Line color */
+}
+
+.form-group {
+  display: flex;
+  margin-top: 5px;
+  align-items: flex-start;
+  margin-bottom: 10px; /* Align items to the top right corner */
+  margin-left: -45px;
+}
+
+.input input {
+  padding: 10px;
+  font-size: 16px;
+  width: 250px;
+  border: none;
+}
+
+/* Style for input field on hover and focus */
+.input input:hover,
+.input input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Style for input field when it has content */
+
+.students {
+  display: flex;
+}
+
+.students a {
+  margin-left: 150px;
+  font-size: 15px;
+}
+
+.studentDetails {
+  /* Add margin from top and left */
+  margin-top: -40px; /* Adjust the top margin as needed */
+  margin-left: 22%;
+  height: 100px;
+  width: 67%;
+}
+mat-form-field {
+  width: 40%;
+  margin-left: 30px;
+}
+
+.form-group {
+  display: flex;
+}
+
+mat-horizontal-stepper {
+  background-color: #efeded;
+}

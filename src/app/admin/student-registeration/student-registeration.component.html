@@ -1,0 +1,157 @@
+<app-main></app-main>
+<div class="container">
+    <h1>Add New Student Details</h1>
+</div>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form>
+            <ng-template matStepLabel>Student Details</ng-template>
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput placeholder="First name" required>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <input matInput placeholder="Last name" required>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput placeholder="Father name" required>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <input matInput placeholder="Mother name" required>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput placeholder="Age" required>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <input matInput placeholder="Mobile Number" required>
+                </mat-form-field>
+
+            </div>
+            <div class="form-group">
+                <mat-form-field>
+                    <mat-label>Select Class</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <mat-label>Select Section</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let food of sections" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Date of Birth">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <mat-label>Sex</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let food of sex" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+            <div style="width: 20%; margin-left: 40%;">
+                <button mat-button matStepperNext style="color: #FFF;">Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <form>
+            <ng-template matStepLabel>Address Details</ng-template>
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput placeholder="Village" required>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <input matInput placeholder="Post" required>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput placeholder="Country" required>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <input matInput placeholder="State" required>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput placeholder="District" required>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <input matInput placeholder="Pincode" required>
+                </mat-form-field>
+            </div>
+            <div style="display: flex; width: 20%; margin-left: 40%;">
+                <button mat-button matStepperPrevious style="color: #FFF;">Back</button>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <button mat-button matStepperNext style="color: #FFF;">Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <form>
+            <ng-template matStepLabel>Documents</ng-template>
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput placeholder="Aadhar Card" required>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <input matInput placeholder="PAN Card" required>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput placeholder="Previous Certificate">
+                </mat-form-field>
+            </div>
+            <div style="display: flex; width: 20%; margin-left: 40%;">
+                <button mat-button matStepperPrevious style="color: #FFF;">Back</button>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <button mat-button matStepperNext style="color: #FFF;">Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        You are now done.
+        <div style="display: flex; width: 20%; margin-left: 40%;">
+            <button mat-button matStepperPrevious style="color: #FFF;">Back</button>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <button mat-button (click)="stepper.reset()" style="color: #FFF;">Reset</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

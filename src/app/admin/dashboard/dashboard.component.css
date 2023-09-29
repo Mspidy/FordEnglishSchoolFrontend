@@ -1,0 +1,34 @@
+
+
+/* sticker.component.css */
+.sticker {
+  width: 200px;
+  height: 200px;
+  background-color: #191970;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s, transform 0.3s; /* Add transitions for smoother animation */
+}
+
+.sticker:hover {
+  background-color: #191970; /* Change color on hover */
+  transform: scale(1.05); /* Scale up slightly on hover */
+}
+
+.sticker-inner {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0;
+}

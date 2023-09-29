@@ -1,0 +1,74 @@
+<div class="studentDetails" *ngIf="forStudent" style="position: fixed;">
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <form>
+                <ng-template matStepLabel>Student Details</ng-template>
+                <div class="form-group">
+                    <mat-form-field>
+                        <input matInput placeholder="Full name" required>
+                    </mat-form-field>
+                    &nbsp;
+                    <mat-form-field>
+                        <input matInput placeholder="Father name" required>
+                    </mat-form-field>
+                    &nbsp;
+                    <mat-form-field>
+                        <input matInput placeholder="Mother name" required>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <input matInput placeholder="Age" required>
+                    </mat-form-field>
+                    &nbsp;
+                    <mat-form-field>
+                        <input matInput placeholder="Mobile Number" required>
+                    </mat-form-field>
+                    &nbsp;
+                    <mat-form-field>
+                        <input matInput placeholder="Class Name" required>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <input matInput placeholder="Section" required>
+                    </mat-form-field>
+                    &nbsp;
+                    <mat-form-field>
+                        <input matInput placeholder="Select Date" required>
+                    </mat-form-field>
+                    &nbsp;
+                    <mat-form-field>
+                        <input matInput placeholder="Male/Femalr" required>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <input matInput placeholder="Address" required>
+                    </mat-form-field>
+                    &nbsp;
+                    <mat-form-field>
+                        <input matInput placeholder="District" required>
+                    </mat-form-field>
+                    &nbsp;
+                    <mat-form-field>
+                        <input matInput placeholder="State" required>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <input matInput placeholder="PinCode" required>
+                    </mat-form-field>
+                    &nbsp;
+                    <mat-form-field>
+                        <input matInput placeholder="Aadhar Card" required>
+                    </mat-form-field>
+                    &nbsp;
+                    <mat-form-field>
+                        <input matInput placeholder="PAN Card" required>
+                    </mat-form-field>
+                </div>
+            </form>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>

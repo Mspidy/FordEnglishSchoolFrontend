@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-color: #191970;
+    width: 108%;
+    margin-top: -48px;
+    margin-bottom: 50px;
+    margin-left: -50px;
+    height: 40px;
+}
+
+.icons{
+    display: flex;
+    margin-right: 20px;
+    margin-top: 5px;
+}

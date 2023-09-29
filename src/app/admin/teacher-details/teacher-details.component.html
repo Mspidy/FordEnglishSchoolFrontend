@@ -1,0 +1,206 @@
+<app-main></app-main>
+<div class="container">
+    <h1>Teacher Details</h1>
+</div>
+<div class="form-group">
+    <div class="input">
+        <input type="text" placeholder="Search Teacher">
+    </div>
+    &nbsp;
+    &nbsp;
+    <div class="button">
+        <button (click)="openAddTeacherPopup()"><i class="fa fa-user-secret"></i> Add Teacher Details</button>
+    </div>
+</div>
+<div class="table-container">
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>TeacherID</th>
+                <th>Name</th>
+                <th>Contact No.</th>
+                <th>Subject Expert</th>
+                <th>Qualification</th>
+                <th>Document's</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of data; let i = index" [class.even-row]="i % 2 === 0">
+            <tr>
+                <td (click)="toggleRow(i)">
+                    <mat-icon class="chevron" [class.expanded]="expandedRows[i]"
+                        style="color: #191970;">keyboard_arrow_down</mat-icon>
+                </td>
+                <td>{{ item.teacher_id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.contact_no }}</td>
+                <td>{{ item.subject_expert }}</td>
+                <td>{{ item.qualification }}</td>
+                <td>{{ item.documents }}</td>
+                <td>
+                    <mat-icon [style.color]="item.active === 'green' ? 'green' : 'red'"
+                        [matTooltip]="item.active === 'green' ? 'Documents Submitted' : 'Documents Not Submitted'"
+                        matTooltipPosition="after">fiber_manual_record</mat-icon>
+                </td>
+            </tr>
+            <tr *ngIf="expandedRows[i]" [class.even-row]="i % 2 === 0">
+                <td colspan="8">
+                    <!-- Additional content goes here -->
+                    <div class="details">
+                        <p style="font-size: 18px;">Hi, Your whole week detail's are there <i class="fa fa-hand-o-right"
+                                aria-hidden="true"></i></p>
+                        <div class="icons_details">
+                            <i class="fa fa-paper-plane"></i>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="add-teacher-popup" *ngIf="isAddTeacherPopupOpen">
+    <div class="row">
+        <p
+            style="font-size: 25px; color: #FFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-left: 200px;">
+            Add Teacher Detail's</p>
+        <mat-icon style="color: #FFF;" (click)="closeAddTeacherPopup()">cancel</mat-icon>
+    </div>
+    <div class="popup-content">
+
+        <mat-horizontal-stepper [linear]="isLinear" #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+                <form>
+                    <ng-template matStepLabel>Teacher Details</ng-template>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput placeholder="First name" required>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field>
+                            <input matInput placeholder="Last name" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput placeholder="Age" required>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field>
+                            <input matInput placeholder="Mobile Number" required>
+                        </mat-form-field>
+
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput [matDatepicker]="picker" placeholder="Date of Birth">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field>
+                            <mat-label>Sex</mat-label>
+                            <mat-select>
+                                <mat-option *ngFor="let food of sex" [value]="food.value">
+                                    {{food.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="stepperButton">
+                        <button mat-button matStepperNext
+                            style="color: #FFF; background-color: #191970; margin-top: 47%; margin-right: 47%;">Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+                <form>
+                    <ng-template matStepLabel>Address Details</ng-template>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput placeholder="Village" required>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field>
+                            <input matInput placeholder="Post" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput placeholder="Country" required>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field>
+                            <input matInput placeholder="State" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput placeholder="District" required>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field>
+                            <input matInput placeholder="Pincode" required>
+                        </mat-form-field>
+                    </div>
+                    <div style="justify-content: space-between;">
+                        <button mat-button matStepperPrevious
+                            style="color: #FFF; background-color: #191970; margin-top: 47%; margin-right: 47%;">Back</button>
+                        <button mat-button matStepperNext
+                            style="color: #FFF; background-color: #191970; margin-top: 47%; margin-right: 35%;">Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+                <form>
+                    <ng-template matStepLabel>Documents Detail</ng-template>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput placeholder="Aadhar Card" required>
+                        </mat-form-field>
+                        &nbsp;
+                        <mat-form-field>
+                            <input matInput placeholder="PAN Card" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-card-content style="display: flex; margin-right: 40%;">
+                            <!-- Graduation File Upload -->
+                            <div class="file-upload">
+                                <label for="graduationUpload" class="custom-label">
+                                    <mat-icon style="margin-right: 8px;">cloud_upload</mat-icon>
+                                    Graduation Certificate
+                                </label>
+                                <input type="file" id="graduationUpload" class="custom-input"
+                                    (change)="onFileSelected($event, 'graduation')">
+                                <span class="file-name">{{ graduationFileName }}</span>
+                            </div>
+
+                            <!-- Certificate File Upload -->
+                            <div class="file-upload">
+                                <label for="certificateUpload" class="custom-label">
+                                    <mat-icon style="margin-right: 8px;">cloud_upload</mat-icon>
+                                    DElEd Certificate
+                                </label>
+                                <input type="file" id="certificateUpload" class="custom-input"
+                                    (change)="onFileSelected($event, 'certificate')">
+                                <span class="file-name">{{ certificateFileName }}</span>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                    <div style="justify-content: space-between;">
+                        <button mat-button matStepperPrevious
+                            style="color: #FFF; background-color: #191970; margin-top: 30%; margin-right: 47%;">Back</button>
+                        <button mat-button matStepperNext
+                            style="color: #FFF; background-color: #191970; margin-top: 30%; margin-right: 25%;">Submit
+                            Detail's</button>
+                    </div>
+                </form>
+            </mat-step>
+        </mat-horizontal-stepper>
+
+    </div>
+</div>
+
+<div class="background-blur" *ngIf="isAddTeacherPopupOpen"></div>

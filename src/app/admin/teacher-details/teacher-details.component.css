@@ -1,0 +1,211 @@
+table {
+    width: 100%;
+  }
+  
+  /* CSS */
+.form-group {
+    display: flex;
+    justify-content: flex-end; /* Align items to the top right corner */
+    align-items: flex-start;
+    margin-bottom: 10px; /* Align items to the top right corner */
+}
+
+/* Additional CSS for input field */
+.input input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 300px; /* Adjust the width as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Style for input field on hover and focus */
+.input input:hover,
+.input input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for input field when it has content */
+.input input:valid {
+    border-color: #4caf50; /* Green border color for valid input */
+}
+
+
+/* Optional: Style the button and icon */
+/* Additional CSS for the button */
+.button button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Style for button on hover and focus */
+.button button:hover,
+.button button:focus {
+    background-color: #0056b3;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.fa-user-secret {
+    margin-right: 5px; /* Add spacing between the icon and text */
+}
+
+
+.container{
+    color: #191970;
+    text-align: center;
+    border-radius: 5px;
+    height: 50px;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: 800 !important;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* table.component.css */
+/* table.component.css */
+/* table.component.css */
+.table-container {
+  margin: 20px;
+  overflow-x: auto;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.custom-table th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.even-row {
+  background-color: #f2f2f2;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.chevron {
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.expanded .chevron {
+  transform: rotate(180deg);
+}
+
+.details{
+    display: flex;
+}
+
+.icons_details{
+    justify-content: flex-end;
+    margin-left: 65%;
+    font-size: 15px;
+}
+  
+
+.add-teacher-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #363190;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  width: 50%;
+}
+
+.popup-content {
+  position: relative;
+}
+
+/* Style the close button */
+.popup-content button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Style the background blur */
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+/* Other styles for the table, icons, and rows go here */
+
+mat-form-field{
+  width: 48%;
+}
+
+.form-group{
+  display: flex;
+}
+
+mat-horizontal-stepper{
+  background-color: #efeded;
+}
+
+.row{
+  display: flex;
+  justify-content:space-between;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.custom-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #2196F3; /* Customize the color as needed */
+}
+
+.custom-input {
+  display: none; /* Hide the default file input */
+}
+
+
+.file-name {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #777; /* Customize the color as needed */
+}
